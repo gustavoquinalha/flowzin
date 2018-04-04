@@ -1,8 +1,5 @@
 <template>
-<<<<<<< HEAD
-=======
 
->>>>>>> 873508df3649d3d097c3db59e1d636f8fd3a0c9a
 <div class="">
   <button type="button" name="button" @click="resetPosition()" class="btn btn-reset">reset</button>
 
@@ -24,27 +21,6 @@ export default {
       father: {
         text: 'Bichinhos',
         first: true,
-<<<<<<< HEAD
-        childrens: [{
-          text: 'Home'
-        }, {
-          text: 'Features',
-          childrens: [{
-            text: 'Features 1'
-          }, {
-            text: 'Features 2',
-            childrens: [{
-              text: 'Features 2 1'
-            }, {
-              text: 'Features 2 2'
-            }]
-          }]
-        }, {
-          text: 'Contact'
-        }, {
-          text: 'Products'
-        }]
-=======
         childrens: [
           {
             text: 'Home'
@@ -76,7 +52,6 @@ export default {
           }
         ]
 
->>>>>>> 873508df3649d3d097c3db59e1d636f8fd3a0c9a
       }
     }
   },
@@ -120,10 +95,6 @@ export default {
 }
 
 .app-master {
-<<<<<<< HEAD
-    border: 2px solid yellow;
-=======
     box-shadow: 0 0 0 2px red;
->>>>>>> 873508df3649d3d097c3db59e1d636f8fd3a0c9a
 }
 </style>
