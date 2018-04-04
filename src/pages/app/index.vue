@@ -51,11 +51,12 @@ export default {
   methods: {
     resetPosition: function () {
       const app = this.$refs['appmaster']
+      const blockSize = app.clientWidth
       console.log(app.offsetLeft)
-      // const tela = document.getElementsByClassName('app')
-      // console.log(tela[0].clientWidth)
 
-      window.scrollTo(app.offsetLeft / 2, (app.offsetTop))
+      console.log(blockSize)
+
+      window.scrollTo(app.offsetLeft / 2, (app.offsetTop - 100))
     }
   }
 }
@@ -78,6 +79,6 @@ export default {
 }
 
 .app-master {
-    border: 2px solid yellow;
+    box-shadow: 0 0 0 2px red;
 }
 </style>
