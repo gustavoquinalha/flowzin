@@ -4,7 +4,7 @@
   <div class="app container text-align-center" id="appc">
     <div class="app-master" ref="appmaster">
       <div class="app-content" ref="role">
-        <tree :text="father.text" :nodes="father.childrens" ref="role" />
+        <tree :text="father.text" :nodes="father.childrens" registerId="father" ref="role" />
       </div>
     </div>
   </div>
