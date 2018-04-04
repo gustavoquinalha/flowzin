@@ -50,13 +50,16 @@ export default {
   },
   methods: {
     resetPosition: function () {
+      console.log('_________')
       const app = this.$refs['appmaster']
-      const blockSize = app.clientWidth
-      console.log(app.offsetLeft)
+      const blockSize = app.clientWidth / 2
+      console.log('l ', app.offsetLeft)
 
       console.log(blockSize)
+      const total = app.offsetLeft / 2
+      console.log('total ', total)
 
-      window.scrollTo(app.offsetLeft / 2, (app.offsetTop - 100))
+      window.scrollTo(total, (app.offsetTop))
     }
   }
 }
