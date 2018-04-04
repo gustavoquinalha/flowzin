@@ -54,6 +54,8 @@ export default {
       console.log(app.offsetLeft)
       // const tela = document.getElementsByClassName('app')
       // console.log(tela[0].clientWidth)
+
+      window.scrollTo(app.offsetLeft / 2, (app.offsetTop - 100))
     }
   }
 }
@@ -63,7 +65,6 @@ export default {
 .app {
     min-width: 200vw;
     min-height: 200vh;
-    background: red;
 }
 
 .btn {

@@ -22,5 +22,6 @@ export default {
 <style>
 .role {
   box-shadow: 0 0 0 2px blue;
+  margin: 10px;
 }
 </style>
