@@ -4,9 +4,9 @@
   <div class="app--content">
 
     <div ref="role" class="role">
-         <div class="btn">
-           Start
-         </div>
+       <div class="btn">
+         Start
+       </div>
     </div>
 
   </div>
@@ -34,7 +34,7 @@ export default {
     console.log(div.offsetTop)
     console.log(div.offsetBottom)
 
-    window.scrollTo(div.offsetLeft, div.offsetTop)
+    window.scrollTo((div.offsetLeft / 2), (div.offsetTop / 2))
   }
 }
 </script>
