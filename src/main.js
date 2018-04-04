@@ -4,13 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-import ScrollBooster from 'scrollbooster'
+// import ScrollBooster from 'scrollbooster'
 
-let sb = new ScrollBooster({
-  viewport: document.querySelector('.app') // required
-  // ...other options
-})
-console.log(sb)
+// let sb = new ScrollBooster({
+//   viewport: document.querySelector('.app')
+// })
+// console.log(sb)
 
 Vue.config.productionTip = false
 

@@ -1,12 +1,59 @@
 <template>
-<div class="app container align-center text-align-center">
+<div class="app container align-center text-align-center"
+     id="appc"
+     style="position: relative">
+  <button type="button" name="button" @click="resetPosition()" class="btn btn-reset">reset</button>
 
   <div class="app--content">
 
     <div ref="role" class="role">
-       <div class="btn">
-         Start
-       </div>
+
+      <div class="box border container column">
+
+        <div class="btn btn-primary">
+          Start
+        </div>
+
+        <div class="box2 border container column">
+
+          <div class="container">
+            <div class="btn btn-primary">
+              Start
+            </div>
+            <div class="btn btn-primary">
+              Start
+            </div>
+            <div class="btn btn-primary">
+              Start
+            </div>
+          </div>
+
+          <div class="box3 border container column">
+
+            <div class="container">
+
+              <div class="box-ref">
+                <div class="btn btn-primary">
+                  Start
+                </div>
+                <div class="btn btn-primary">
+                  Start
+                </div>
+              </div>
+
+              <div class="btn btn-primary">
+                Start
+              </div>
+              <div class="btn btn-primary">
+                Start
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
     </div>
 
   </div>
@@ -22,19 +69,21 @@ export default {
     }
   },
   mounted () {
-    // window.location.hash = '#role'
-    const div = this.$refs['role']
-    const tela = window
+    this.resetPosition()
+  },
+  methods: {
+    resetPosition: function () {
+      const div = this.$refs['role']
+      const widthBlock = div.clientWidth
 
-    console.log('innerWidth:', tela.innerWidth)
-    console.log('innerHeight:', tela.innerHeight)
+      console.log('tamanho da div ', div.offsetLeft)
+      console.log('tamanho da box azul: ', widthBlock)
 
-    console.log(div.offsetLeft)
-    console.log(div.offsetRight)
-    console.log(div.offsetTop)
-    console.log(div.offsetBottom)
+      const total = div.offsetLeft - (widthBlock - 30) // 40 da borda - 10 do shadow
+      console.log('total ', total)
 
-    window.scrollTo((div.offsetLeft / 2), (div.offsetTop - 100))
+      window.scrollTo(total, (div.offsetTop - 50))
+    }
   }
 }
 </script>
@@ -43,11 +92,31 @@ export default {
 .app {
     min-width: 200vw;
     min-height: 200vh;
-    background: red;
-    padding: 100px;
+}
+
+.btn {
+    margin: 0;
 }
 
 .role {
-  border: 5px solid blue;
+    box-shadow: 0 0 0 5px blue;
+    padding: 20px;
+}
+
+.btn-reset {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+
+.border,
+.box-ref {
+    border: 1px solid red;
+    padding: 10px;
+}
+
+.container {
+    align-items: center;
+    justify-content: center;
 }
 </style>
