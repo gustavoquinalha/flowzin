@@ -1,11 +1,12 @@
 <template>
+
 <div class="">
   <button type="button" name="button" @click="resetPosition()" class="btn btn-reset">reset</button>
 
   <div class="app container align-center text-align-center" id="appc">
     <div class="app-master" ref="appmaster">
       <div class="app-content" ref="role">
-        <tree :text="father.text" :nodes="father.childrens" /> </div>
+        <tree :text="father.text" :nodes="father.childrens" ref="role"/> </div>
     </div>
   </div>
 
@@ -20,25 +21,37 @@ export default {
       father: {
         text: 'Bichinhos',
         first: true,
-        childrens: [{
-          text: 'Home'
-        }, {
-          text: 'Features',
-          childrens: [{
-            text: 'Features 1'
-          }, {
-            text: 'Features 2',
-            childrens: [{
-              text: 'Features 2 1'
-            }, {
-              text: 'Features 2 2'
-            }]
-          }]
-        }, {
-          text: 'Contact'
-        }, {
-          text: 'Products'
-        }]
+        childrens: [
+          {
+            text: 'Home'
+          },
+          {
+            text: 'Features',
+            childrens: [
+              {
+                text: 'Feature 1'
+              },
+              {
+                text: 'Feature 2',
+                childrens: [
+                  {
+                    text: 'Feature 2 1'
+                  },
+                  {
+                    text: 'Feature 2 2'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            text: 'Mapa'
+          },
+          {
+            text: 'Contato'
+          }
+        ]
+
       }
     }
   },
