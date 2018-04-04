@@ -1,12 +1,4 @@
 <template>
-<<<<<<< HEAD
-<div class="app container align-center text-align-center">
-
-  <div class="app-content">
-
-    <tree :text="father.text" :nodes="father.childrens" ref="role"/>
-
-=======
 <div class="">
   <button type="button" name="button" @click="resetPosition()" class="btn btn-reset">reset</button>
 
@@ -15,7 +7,6 @@
       <div class="app-content" ref="role">
         <tree :text="father.text" :nodes="father.childrens" /> </div>
     </div>
->>>>>>> d2aabb65eca1c6c5a63a89d08003f521eb493fae
   </div>
 
 </div>
@@ -27,40 +18,6 @@ export default {
   data () {
     return {
       father: {
-<<<<<<< HEAD
-        text: 'Father',
-        first: true,
-        childrens: [
-          {
-            text: 'Child'
-          },
-          {
-            text: 'Child1',
-            childrens: [
-              {
-                text: 'Child12'
-              },
-              {
-                text: 'Child13',
-                childrens: [
-                  {
-                    text: 'Child234'
-                  },
-                  {
-                    text: 'Child245'
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            text: 'Child2'
-          },
-          {
-            text: 'Child3'
-          }
-        ]
-=======
         text: 'Bichinhos',
         first: true,
         childrens: [{
@@ -82,7 +39,6 @@ export default {
         }, {
           text: 'Products'
         }]
->>>>>>> d2aabb65eca1c6c5a63a89d08003f521eb493fae
       }
     }
   },
@@ -90,12 +46,6 @@ export default {
     Tree
   },
   mounted () {
-<<<<<<< HEAD
-    const div = this.$refs['role'][0]
-    console.log(div)
-
-    window.scrollTo((div.offsetLeft / 2), (div.offsetTop - 100))
-=======
     this.resetPosition()
   },
   methods: {
@@ -107,7 +57,6 @@ export default {
 
       window.scrollTo(app.offsetLeft / 2, (app.offsetTop))
     }
->>>>>>> d2aabb65eca1c6c5a63a89d08003f521eb493fae
   }
 }
 </script>
