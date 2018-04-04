@@ -29,8 +29,7 @@ export default {
     console.log(div.offsetTop)
     console.log(div.offsetBottom)
 
-    // this.$refs['role'].focus()
-    // console.log(this.$refs['role'])
+    window.scrollTo(div.offsetLeft, div.offsetTop)
   }
 }
 </script>
