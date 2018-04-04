@@ -1,9 +1,11 @@
 <template>
-  <div class="role btn">
-    <div>
-      {{ text }}
+  <div class="role">
+    <div class="btn">
+        {{ text }}
     </div>
-    <tree v-for="(node, index) in nodes" :nodes="node.childrens" :text="node.text" :key="`${node.text}${index}`"/>
+    <div class="container">
+      <tree v-for="(node, index) in nodes" :nodes="node.childrens" :text="node.text" :key="`${node.text}${index}`"/>
+    </div>
   </div>
 </template>
 
@@ -19,6 +21,6 @@ export default {
 
 <style>
 .role {
-  border: 5px solid blue;
+  box-shadow: 0 0 0 2px blue;
 }
 </style>
