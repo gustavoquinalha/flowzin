@@ -6,7 +6,8 @@
 
   <div class="app--content">
 
-    <div ref="role" class="role">
+    <div ref="role"
+         class="role">
 
       <div class="box border container column">
 
@@ -54,6 +55,8 @@
 
       </div>
 
+      {{flow}}
+
     </div>
 
   </div>
@@ -65,7 +68,16 @@
 export default {
   data () {
     return {
-
+      flow: {
+        text: { name: 'Parent node' },
+        children: [
+          {
+            text: { name: 'First child' }
+          }, {
+            text: { name: 'Second child' }
+          }
+        ]
+      }
     }
   },
   mounted () {
