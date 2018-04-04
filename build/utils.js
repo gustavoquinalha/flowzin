@@ -60,7 +60,10 @@ exports.cssLoaders = function (options) {
     postcss: generateLoaders(),
     less: generateLoaders('less'),
     sass: generateLoaders('sass', { indentedSyntax: true }),
-    scss: generateLoaders('sass'),
+    scss: generateLoaders('sass', {
+      includePaths: ['./src/assets/css/base'],
+      data: '@import "./src/assets/css/main.scss";'
+    }),
     stylus: generateLoaders('stylus'),
     styl: generateLoaders('stylus')
   }
