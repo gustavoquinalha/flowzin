@@ -1,0 +1,58 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.2;
+  color: $color-dark;
+  margin: 0;
+}
+
+h1 {
+  font-size: 55px;
+}
+
+h2 {
+  font-size: 43px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+h4 {
+  font-size: 22px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+b,
+strong {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+p {
+  font-size: 16px;
+  color: $color-grey;
+  line-height: 1.5;
+}
+
+a {
+  color: $color-primary;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: darken($color-primary, 20);
+}

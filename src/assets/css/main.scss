@@ -1,4 +1,10 @@
-// @import 'base/buttons.scss';
-* {
-  background: red
-}
+// variables
+@import 'base/variables';
+
+// reset
+@import 'base/reset';
+@import 'base/base';
+
+// styleguide
+@import 'styleguide/buttons';
+@import 'styleguide/text';

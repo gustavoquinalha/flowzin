@@ -1,0 +1,250 @@
+.btn {
+  font-size: 16px;
+  line-height: 100%;
+  font-weight: 500;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 15px 30px;
+  border-radius: $radius;
+  cursor: pointer;
+  border: 1px solid transparent;
+  background: $color-light;
+  color: $color-dark;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+  transition: 0.2s;
+  font-family: inherit;
+
+  a {
+    text-decoration: none;
+  }
+
+  &.btn-active,
+  &:hover {
+    background-color: darken($color-light, 20);
+  }
+
+  // sizes
+  &.btn-sm {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  &.btn-lg {
+    font-size: 18px;
+    padding: 25px 40px;
+  }
+
+  &.btn-full {
+    width: 100%;
+  }
+
+  // colors
+  &.btn-primary {
+    background: $color-primary;
+    color: $color-white;
+
+    &:hover {
+      background: darken($color-primary, 10);
+    }
+  }
+
+  &.btn-secundary {
+    background: $color-secundary;
+    color: $color-white;
+
+    &:hover {
+      background: darken($color-secundary, 20);
+    }
+  }
+
+  &.btn-purple {
+    background: $color-purple;
+    color: $color-white;
+
+    &:hover {
+      background: darken($color-purple, 20);
+    }
+  }
+
+  &.btn-gradient {
+    background: $color-secundary;
+    background: linear-gradient(to right, $color-primary, $color-secundary);
+    background-size: 110% auto;
+    background-position: center;
+    color: $color-white;
+
+    &:hover {
+      background: linear-gradient(to right, $color-primary, $color-primary);
+    }
+  }
+
+  &.btn-outline {
+    background: transparent;
+    border: 2px solid $color-white;
+    color: $color-white;
+
+    &:hover {
+      background: $color-white;
+      color: $color-dark;
+    }
+
+    &.btn-primary {
+      border-color: $color-primary;
+      color: $color-primary;
+
+      &:hover {
+        color: $color-white;
+        background: $color-primary;
+      }
+    }
+
+    &.btn-secundary {
+      border-color: $color-secundary;
+      color: $color-secundary;
+
+      &:hover {
+        color: $color-white;
+        background: $color-secundary;
+      }
+    }
+
+    &.btn-purple {
+      border-color: $color-purple;
+      color: $color-purple;
+
+      &:hover {
+        color: $color-white;
+        background: $color-purple;
+      }
+    }
+  }
+
+  &.btn-rounded {
+    border-radius: 50px;
+  }
+
+  // disabled
+  &.btn.disabled,
+  &.btn:disabled,
+  &.btn[disabled] {
+    cursor: not-allowed;
+    opacity: 0.5;
+    background: $color-grey;
+    color: $color-dark;
+
+    &:hover {
+      filter: none;
+    }
+  }
+
+  &.btn-min-width {
+    width: 150px;
+  }
+
+  &.btn-link {
+    padding: 20px;
+  }
+
+  &.btn-transparent {
+    background: transparent;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+}
+
+.btn-plus {
+  .btn,
+  input {
+    height: 40px;
+    border-radius: 0;
+    padding: 0;
+  }
+
+  input {
+    width: 100px;
+    text-align: center;
+    font-weight: bold;
+    border-left: none;
+    border-right: none;
+    color: $color-primary;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .btn {
+    width: 50px;
+    font-weight: normal;
+    font-size: 1.5rem;
+
+    &:first-child {
+      border-top-left-radius: $radius;
+      border-bottom-left-radius: $radius;
+    }
+
+    &:last-child {
+      border-top-right-radius: $radius;
+      border-bottom-right-radius: $radius;
+    }
+  }
+}
+
+.btn-download-hellomob {
+  min-width: 220px;
+  height: 50px;
+
+  .loader {
+    display: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid $color-white;
+    border-color: $color-white $color-white $color-white transparent;
+    animation-name: loader;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  &.loading {
+    .loader {
+      display: block;
+    }
+
+    img,
+    span {
+      display: none;
+    }
+  }
+}
+
+.btn-icon-social {
+  position: relative;
+
+  span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.1);
+    height: 100%;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+  }
+
+  b {
+    transform: translateX(25px);
+    // background: red;
+  }
+
+}
