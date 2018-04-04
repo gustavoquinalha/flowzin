@@ -34,7 +34,7 @@ export default {
     console.log(div.offsetTop)
     console.log(div.offsetBottom)
 
-    window.scrollTo((div.offsetLeft / 2), (div.offsetTop / 2))
+    window.scrollTo((div.offsetLeft / 2), (div.offsetTop - 100))
   }
 }
 </script>
