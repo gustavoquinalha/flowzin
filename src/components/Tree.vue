@@ -26,7 +26,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss" scoped>
 .role {
   box-shadow: 0 0 0 2px blue;
   margin: 10px;

@@ -1,11 +1,15 @@
 <template>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 873508df3649d3d097c3db59e1d636f8fd3a0c9a
 <div class="">
   <button type="button" name="button" @click="resetPosition()" class="btn btn-reset">reset</button>
 
   <div class="app container align-center text-align-center" id="appc">
     <div class="app-master" ref="appmaster">
       <div class="app-content" ref="role">
-        <tree :text="father.text" :nodes="father.childrens" /> </div>
+        <tree :text="father.text" :nodes="father.childrens" ref="role"/> </div>
     </div>
   </div>
 
@@ -20,6 +24,7 @@ export default {
       father: {
         text: 'Bichinhos',
         first: true,
+<<<<<<< HEAD
         childrens: [{
           text: 'Home'
         }, {
@@ -39,6 +44,39 @@ export default {
         }, {
           text: 'Products'
         }]
+=======
+        childrens: [
+          {
+            text: 'Home'
+          },
+          {
+            text: 'Features',
+            childrens: [
+              {
+                text: 'Feature 1'
+              },
+              {
+                text: 'Feature 2',
+                childrens: [
+                  {
+                    text: 'Feature 2 1'
+                  },
+                  {
+                    text: 'Feature 2 2'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            text: 'Mapa'
+          },
+          {
+            text: 'Contato'
+          }
+        ]
+
+>>>>>>> 873508df3649d3d097c3db59e1d636f8fd3a0c9a
       }
     }
   },
@@ -50,12 +88,16 @@ export default {
   },
   methods: {
     resetPosition: function () {
+      console.log('_________')
       const app = this.$refs['appmaster']
-      console.log(app.offsetLeft)
-      // const tela = document.getElementsByClassName('app')
-      // console.log(tela[0].clientWidth)
+      const blockSize = app.clientWidth / 2
+      console.log('l ', app.offsetLeft)
 
-      window.scrollTo(app.offsetLeft / 2, (app.offsetTop))
+      console.log(blockSize)
+      const total = app.offsetLeft / 2
+      console.log('total ', total)
+
+      window.scrollTo(total, (app.offsetTop))
     }
   }
 }
@@ -78,6 +120,10 @@ export default {
 }
 
 .app-master {
+<<<<<<< HEAD
     border: 2px solid yellow;
+=======
+    box-shadow: 0 0 0 2px red;
+>>>>>>> 873508df3649d3d097c3db59e1d636f8fd3a0c9a
 }
 </style>
