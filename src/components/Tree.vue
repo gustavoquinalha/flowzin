@@ -1,6 +1,6 @@
 <template>
   <div class="role">
-    <div class="btn">
+    <div class="btn" @click="show">
         {{ text }}
     </div>
     <div class="container wrap">
@@ -15,7 +15,14 @@ export default {
   props: [
     'nodes',
     'text'
-  ]
+  ],
+  methods: {
+    show (ev) {
+      let el = ev.target.nextElementSibling
+      if (el.style.display) el.style.display = null
+      else el.style.display = 'none'
+    }
+  }
 }
 </script>
 

@@ -65,10 +65,6 @@ export default {
 .app {
     min-width: 200vw;
     min-height: 200vh;
-<<<<<<< HEAD
-    background: red;
-    padding: 100px;
-=======
 }
 
 .btn {
@@ -83,6 +79,5 @@ export default {
 
 .app-master {
     border: 2px solid yellow;
->>>>>>> d2aabb65eca1c6c5a63a89d08003f521eb493fae
 }
 </style>
