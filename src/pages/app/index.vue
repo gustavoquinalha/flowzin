@@ -69,8 +69,6 @@ export default {
     width: 100vw;
     height: 100vh;
     overflow: auto;
-    box-sizing: border-box;
-    // background: red;
 }
 
 .btn {
@@ -89,8 +87,13 @@ export default {
 }
 
 .app-master {
-    padding: 10vw;
-    box-shadow: 0 0 0 2px red;
+    // padding: 50px;
+    // box-shadow: 0 0 0 2px red;
     margin: 0 auto;
+}
+@media (max-width: 720px) {
+  .app-master {
+    padding: 0;
+  }
 }
 </style>

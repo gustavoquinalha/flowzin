@@ -3,7 +3,7 @@
     <div class="btn">
         {{ text }}
     </div>
-    <div class="container wrap">
+    <div class="container">
       <tree v-for="(node, index) in nodes" :nodes="node.childrens" :text="node.text" :key="`${node.text}${index}`"/>
     </div>
   </div>
