@@ -3,10 +3,10 @@
 
   <div class="app--content">
 
-    <div class="btn"
-         id="role"
-         ref="role">
-      Start
+    <div ref="role" class="role">
+         <div class="btn">
+           Start
+         </div>
     </div>
 
   </div>
@@ -24,6 +24,11 @@ export default {
   mounted () {
     // window.location.hash = '#role'
     const div = this.$refs['role']
+    const tela = window
+
+    console.log('innerWidth:', tela.innerWidth)
+    console.log('innerHeight:', tela.innerHeight)
+
     console.log(div.offsetLeft)
     console.log(div.offsetRight)
     console.log(div.offsetTop)
@@ -40,5 +45,9 @@ export default {
     min-height: 200vh;
     background: red;
     padding: 100px;
+}
+
+.role {
+  border: 5px solid blue;
 }
 </style>
