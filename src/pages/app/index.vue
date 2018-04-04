@@ -1,12 +1,10 @@
 <template>
-<div class="app container align-center text-align-center"
-     id="appc"
-     style="position: relative">
+<div class="app container align-center text-align-center" id="appc">
   <button type="button" name="button" @click="resetPosition()" class="btn btn-reset">reset</button>
 
-  <div class="app--content">
+  <div class="app-content" v-for="(node, index) in nodes" :key="`${node.text}${index}`" v-bind:ref="node.first?'role':''">
 
-    <div ref="role"
+    <!-- <div ref="role"
          class="role">
 
       <div class="box border container column">
@@ -57,7 +55,10 @@
 
       {{flow}}
 
-    </div>
+    </div> -->
+
+    <tree :text="node.text"
+          :nodes="node.childrens" />
 
   </div>
 
@@ -65,20 +66,38 @@
 </template>
 
 <script>
+import Tree from '@/components/Tree'
+
 export default {
   data () {
     return {
-      flow: {
-        text: { name: 'Parent node' },
-        children: [
-          {
-            text: { name: 'First child' }
+      nodes: [{
+        text: 'Father',
+        first: true,
+        childrens: [{
+          text: 'Child'
+        }, {
+          text: 'Child1',
+          childrens: [{
+            text: 'Child12'
           }, {
-            text: { name: 'Second child' }
-          }
-        ]
-      }
+            text: 'Child13',
+            childrens: [{
+              text: 'Child234'
+            }, {
+              text: 'Child245'
+            }]
+          }]
+        }, {
+          text: 'Child2'
+        }, {
+          text: 'Child3'
+        }]
+      }]
     }
+  },
+  components: {
+    Tree
   },
   mounted () {
     this.resetPosition()
@@ -92,8 +111,8 @@ export default {
       console.log('tamanho da box azul: ', widthBlock)
 
       const total = div.offsetLeft - (widthBlock - 30) // 40 da borda - 10 do shadow
-      console.log('total ', total)
 
+      console.log('total ', total)
       window.scrollTo(total, (div.offsetTop - 50))
     }
   }
