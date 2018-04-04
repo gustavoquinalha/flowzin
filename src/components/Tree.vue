@@ -3,7 +3,7 @@
     <div class="btn">
         {{ text }}
     </div>
-    <div class="container">
+    <div class="container" :class="{ wrap : responsive}">
       <tree v-for="(node, index) in nodes" :nodes="node.childrens" :text="node.text" :key="`${node.text}${index}`"/>
     </div>
   </div>
@@ -15,7 +15,12 @@ export default {
   props: [
     'nodes',
     'text'
-  ]
+  ],
+  data () {
+    return {
+      responsive: false
+    }
+  }
 }
 </script>
 
