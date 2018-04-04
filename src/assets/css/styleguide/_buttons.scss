@@ -6,7 +6,6 @@
   white-space: nowrap;
   padding: 15px 30px;
   border-radius: $radius;
-  cursor: pointer;
   border: 1px solid transparent;
   background: $color-light;
   color: $color-dark;
@@ -16,6 +15,7 @@
   outline: none;
   transition: 0.2s;
   font-family: inherit;
+  cursor: pointer;
 
   a {
     text-decoration: none;
