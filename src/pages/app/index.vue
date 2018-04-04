@@ -55,7 +55,7 @@ export default {
       // const tela = document.getElementsByClassName('app')
       // console.log(tela[0].clientWidth)
 
-      window.scrollTo(app.offsetLeft / 2, (app.offsetTop - 100))
+      window.scrollTo(app.offsetLeft / 2, (app.offsetTop))
     }
   }
 }
