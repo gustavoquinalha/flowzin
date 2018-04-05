@@ -4,7 +4,7 @@
   <div class="app container text-align-center" id="appc">
     <div class="app-master" ref="appmaster">
       <div class="app-content" ref="role">
-        <tree :text="father.text" :nodes="father.childrens" registerId="father" ref="role" />
+        <tree :text="father.text" :nodes="father.childrens" registerId="father" ref="role" :element="father"/>
       </div>
     </div>
   </div>
@@ -19,25 +19,29 @@ export default {
     return {
       father: {
         text: 'Bichinhos',
-        first: true,
         childrens: [{
           text: 'Home'
         }, {
           text: 'Features',
           childrens: [{
-            text: 'Feature 1'
+            text: 'Feature 1',
+            childrens: []
           }, {
             text: 'Feature 2',
             childrens: [{
-              text: 'Feature 2 1'
+              text: 'Feature 2 1',
+              childrens: []
             }, {
-              text: 'Feature 2 2'
+              text: 'Feature 2 2',
+              childrens: []
             }]
           }]
         }, {
-          text: 'Mapa'
+          text: 'Mapa',
+          childrens: []
         }, {
-          text: 'Contato'
+          text: 'Contato',
+          childrens: []
         }]
       }
     }
