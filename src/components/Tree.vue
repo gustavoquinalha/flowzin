@@ -1,7 +1,7 @@
 <template>
 <ul class="role">
   <li>
-    <div class="btn" :id="`box-${registerId.replace(' ', '')}`">
+    <div class="btn" :id="`box-${registerId.replace(' ', '')}`" draggable="true" @drag.prevent="dragged(index)" @dragover.prevent="dragover(registerId.replace(' ', ''))" @drop.prevent="dropped()" @dragend="dragended(index)">
       {{ text }}
       <div class="btn-drop container align-center text-align-center">
         <ul class="list-none">
@@ -25,6 +25,8 @@
 </template>
 
 <script>
+import dragndropBus from '@/event-bus/dragNDrop'
+
 export default {
   name: 'tree',
   props: [
@@ -36,25 +38,51 @@ export default {
   ],
   data () {
     return {
-      responsive: false
+      responsive: false,
+      dragging: false,
+      isdropped: false
     }
   },
   methods: {
     addChild () {
-      console.log(this.nodes)
       const text = prompt('Informe o texto: ')
       this.nodes.push({ text: text, childrens: [] })
     },
     removeNode (index) {
-      console.log(index)
-      this.element.splice(index, 1)
-      console.log(this.element)
+      if (index >= 0) this.element.splice(index, 1)
     },
     editText (index) {
       const text = prompt('Informe o novo texto: ')
       if (index >= 0) this.element[index].text = text
       else this.element.text = text
+    },
+    dragged (index) {
+      if (index && index >= 0 && !this.dragging) dragndropBus.$emit('todrag', this.element[index])
+      this.dragging = true
+    },
+    dragover (registerId) {
+      // if (!this.dragging) dragndropBus.$emit('todrop', registerId)
+    },
+    dropped () {
+      if (this.index && this.index >= 0) {
+        dragndropBus.$emit('droped', this.registerId)
+        this.isdropped = true
+      }
+    },
+    dragended (index) {
+      if (this.dropped) {
+        this.removeNode(index)
+        this.dragging = false
+        this.isdropped = false
+      }
     }
+  },
+  mounted () {
+    dragndropBus.$on(`send-${this.registerId.replace(' ', '')}`, todrag => {
+      console.log(this.nodes)
+      this.nodes.push(todrag)
+      console.log(this.nodes)
+    })
   }
 }
 </script>
